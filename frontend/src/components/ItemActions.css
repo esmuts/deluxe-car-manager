@@ -1,0 +1,14 @@
+.item-action-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.item-action-links a {
+  width: 100%;
+  border: 1px solid #272727;
+  background-color: #d98371;
+}
+
+.item-action-links a:hover {
+  background-color: #9b606f;
+}

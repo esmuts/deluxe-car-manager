@@ -1,0 +1,40 @@
+/* Color palette:
+
+text & border: #272727
+shaded: #584455
+darker: #9B606F
+background: #FDB767
+section: #D98371
+bright: #F9F871
+
+
+
+/* General App CSS */
+
+.app {
+  text-align: center;
+  margin: auto;
+}
+
+.header {
+  margin-top: 1vh;
+  border: 1px solid #272727;
+  background-color: #f9f871;
+}
+
+.nav-bar {
+  border: 1px solid #272727;
+  background-color: #fdb767;
+}
+
+.nav-bar:hover {
+  background-color: #9b606f;
+}
+
+.display-area {
+  border: 1px solid #272727;
+}
+
+a:hover {
+  color: inherit;
+}

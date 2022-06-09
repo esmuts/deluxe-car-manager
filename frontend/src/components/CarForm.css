@@ -1,0 +1,10 @@
+.car-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d98371;
+}
+
+.submit-button {
+  width: 20vmin;
+}

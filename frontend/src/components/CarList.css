@@ -1,0 +1,22 @@
+.car-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #d98371;
+}
+
+.car-list li {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+li:hover {
+  background-color: #584455;
+}
+
+li a {
+  width: 100%;
+}
