@@ -27,9 +27,10 @@
  * https://reactrouter.com/docs/en/v6/hooks/use-navigate
  *
  * Using setTimeOut in useEffect API call –
- * (Thanks to J.C. van der Merwe for the suggestion.)
+ * (Thanks to code reviewer J.C. van der Merwe for the suggestion.)
  * https://dev.to/reenydavidson/settimeout-in-useeffect-api-call-data-fetching-j33
  * https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks
+ * https://felixgerschau.com/react-hooks-settimeout/
  *
  */
 
@@ -60,7 +61,15 @@ function App() {
 
   // Updates carList for each new render (temp --> add condition)
   useEffect(() => {
-    fetchCarList();
+    // SetTimeout halts other effects (e.g. rendering) until the callback
+    // function has executed.
+    const timer = setTimeout(() => {
+      fetchCarList();
+    }, 10);
+
+    // Clearing timeout ensures callback stops executing.
+    return () => clearTimeout(timer);
+
     // useEffect hook will only run if 'reload' is given a new value.
   }, [reload]);
 
@@ -89,9 +98,7 @@ function App() {
         }
       );
       // Alters variable to fetch car list via 'useState' hook.
-      setTimeout(() => {
-        setReload(!reload);
-      }, 2000);
+      setReload(!reload);
     } catch (err) {
       setError(err);
     }
@@ -111,9 +118,7 @@ function App() {
         }
       );
       // Alters variable to fetch car list via 'useState' hook.
-      setTimeout(() => {
-        setReload(!reload);
-      }, 2000);
+      setReload(!reload);
     } catch (err) {
       setError(err);
     }
@@ -130,9 +135,7 @@ function App() {
         body: JSON.stringify(carList),
       });
       // Alters variable to fetch car list via 'useState' hook.
-      setTimeout(() => {
-        setReload(!reload);
-      }, 2000);
+      setReload(!reload);
     } catch (err) {
       setError(err);
     }
